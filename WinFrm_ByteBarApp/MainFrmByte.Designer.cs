@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.LblByteBar = new System.Windows.Forms.Label();
+            this.btnDisplay = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LblByteBar
@@ -41,11 +42,22 @@
             this.LblByteBar.TabIndex = 0;
             this.LblByteBar.Text = "Byte Bar";
             // 
+            // btnDisplay
+            // 
+            this.btnDisplay.Location = new System.Drawing.Point(352, 134);
+            this.btnDisplay.Name = "btnDisplay";
+            this.btnDisplay.Size = new System.Drawing.Size(75, 23);
+            this.btnDisplay.TabIndex = 1;
+            this.btnDisplay.Text = "Display";
+            this.btnDisplay.UseVisualStyleBackColor = true;
+            this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
+            // 
             // MainFrmByte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDisplay);
             this.Controls.Add(this.LblByteBar);
             this.Name = "MainFrmByte";
             this.Text = "Byte Bar";
@@ -58,6 +70,7 @@
         #endregion
 
         private System.Windows.Forms.Label LblByteBar;
+        private System.Windows.Forms.Button btnDisplay;
     }
 }
 

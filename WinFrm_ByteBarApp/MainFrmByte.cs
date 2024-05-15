@@ -4,10 +4,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
 
 namespace WinFrm_ByteBarApp
 {
@@ -20,7 +23,7 @@ namespace WinFrm_ByteBarApp
 
         private void MainFrmByte_Load(object sender, EventArgs e)
         {
-            ConnectToOracle();
+            
         }
 
         private static string GetConnectionString()
@@ -29,21 +32,31 @@ namespace WinFrm_ByteBarApp
             return oradb;
         }
 
-        private void ConnectToOracle()
-        {
-            string connectionString = GetConnectionString();
-            OracleConnection conn = new OracleConnection(connectionString);
+        private void btnDisplay_Click(object sender, EventArgs e)
+        {      
+            OracleCommand cmd = new OracleCommand();
+
+            cmd.CommandText = "select * from Product";
+
+            OracleConnection conn = new OracleConnection(GetConnectionString());
 
             conn.Open();
-            OracleCommand cmd = new OracleCommand();
+
             cmd.Connection = conn;
 
-            cmd.CommandText = "select * from Beer where id = 10";
-            cmd.CommandType = CommandType.Text;
             OracleDataReader dr = cmd.ExecuteReader();
-            dr.Read();
-            LblByteBar.Text = dr.GetString(0);
-            conn.Dispose();
+
+            try
+            {
+                while (dr.Read())
+                {
+                    Console.WriteLine(dr.GetString(0));
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
     }
 }
