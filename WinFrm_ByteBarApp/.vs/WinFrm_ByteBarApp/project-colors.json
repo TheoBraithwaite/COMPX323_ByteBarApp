@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "fd4fe2ac-9756-43e4-9f61-28bc1575ee5e": {
+      "ProjectGuid": "fd4fe2ac-9756-43e4-9f61-28bc1575ee5e",
+      "DisplayName": "WinFrm_ByteBarApp",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

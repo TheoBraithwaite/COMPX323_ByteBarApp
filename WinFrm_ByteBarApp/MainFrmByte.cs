@@ -28,7 +28,8 @@ namespace WinFrm_ByteBarApp
 
         private static string GetConnectionString()
         {
-            string oradb = "Data Source=oracle.cms.waikato.ac.nz:1521/teaching;User Id=tb176;Password=FmxzsURNGB;";
+            //string oradb = "Data Source=oracle.cms.waikato.ac.nz:1521/teaching;User Id=tb176;Password=FmxzsURNGB;";
+            string oradb = "Data Source=localhost:1521/system;User Id=system;Password=Oracle123;";
             return oradb;
         }
 
