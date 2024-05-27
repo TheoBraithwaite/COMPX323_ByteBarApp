@@ -90,10 +90,19 @@
     <Compile Include="MainFrmByte.Designer.cs">
       <DependentUpon>MainFrmByte.cs</DependentUpon>
     </Compile>
+    <Compile Include="MongoFrmByte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MongoFrmByte.Designer.cs">
+      <DependentUpon>MongoFrmByte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainFrmByte.resx">
       <DependentUpon>MainFrmByte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MongoFrmByte.resx">
+      <DependentUpon>MongoFrmByte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

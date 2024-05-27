@@ -68,3 +68,4 @@ C:\Users\tb176\Source\Repos\COMPX323_ByteBarApp\WinFrm_ByteBarApp\obj\Debug\WinF
 C:\Users\tb176\Source\Repos\COMPX323_ByteBarApp\WinFrm_ByteBarApp\obj\Debug\WinFrm_ByteBarApp.csproj.CopyComplete
 C:\Users\tb176\Source\Repos\COMPX323_ByteBarApp\WinFrm_ByteBarApp\obj\Debug\WinFrm_ByteBarApp.exe
 C:\Users\tb176\Source\Repos\COMPX323_ByteBarApp\WinFrm_ByteBarApp\obj\Debug\WinFrm_ByteBarApp.pdb
+C:\Users\BEASTY-BOY\Documents\GitHub\COMPX323_ByteBarApp\WinFrm_ByteBarApp\obj\Debug\WinFrm_ByteBarApp.MongoFrmByte.resources
