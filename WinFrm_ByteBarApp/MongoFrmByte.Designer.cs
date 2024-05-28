@@ -138,6 +138,7 @@
             this.btnDisplayMongo.TabIndex = 9;
             this.btnDisplayMongo.Text = "Display";
             this.btnDisplayMongo.UseVisualStyleBackColor = true;
+            this.btnDisplayMongo.Click += new System.EventHandler(this.btnDisplayMongo_Click);
             // 
             // MongoFrmByte
             // 

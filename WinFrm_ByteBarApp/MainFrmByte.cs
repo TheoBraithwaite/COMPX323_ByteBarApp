@@ -44,10 +44,10 @@ namespace WinFrm_ByteBarApp
         private static string GetConnectionString()
         {
             // University database connection
-            //string oradb = "Data Source=oracle.cms.waikato.ac.nz:1521/teaching;User Id=tb176;Password=FmxzsURNGB;";
+            string oradb = "Data Source=oracle.cms.waikato.ac.nz:1521/teaching;User Id=tb176;Password=FmxzsURNGB;";
 
             //Local database for testing at home
-            string oradb = "Data Source=localhost:1521/system;User Id=system;Password=Oracle123;";
+            //string oradb = "Data Source=localhost:1521/system;User Id=system;Password=Oracle123;";
             return oradb;
         }
 
@@ -118,6 +118,18 @@ namespace WinFrm_ByteBarApp
                 // Closes the parent form.
                 Application.Exit();
             }
+        }
+
+        private void mongoDBToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //hides this form currently on
+            Hide();
+            //is the Add_Class page as a new object               
+            MongoFrmByte mongoDBWindow = new MongoFrmByte();
+            //Shows the add Class page window
+            mongoDBWindow.ShowDialog();
+            //closes the current open windows so its only the new one showing
+            this.Close();
         }
     }
 }

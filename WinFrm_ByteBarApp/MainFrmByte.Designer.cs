@@ -107,8 +107,9 @@
             // mongoDBToolStripMenuItem
             // 
             this.mongoDBToolStripMenuItem.Name = "mongoDBToolStripMenuItem";
-            this.mongoDBToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.mongoDBToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mongoDBToolStripMenuItem.Text = "MongoDB";
+            this.mongoDBToolStripMenuItem.Click += new System.EventHandler(this.mongoDBToolStripMenuItem_Click);
             // 
             // listViewByteBar
             // 
