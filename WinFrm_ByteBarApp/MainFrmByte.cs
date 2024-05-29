@@ -9,6 +9,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MongoDB.Driver;
 using Oracle.ManagedDataAccess.Client;
 
 namespace WinFrm_ByteBarApp
@@ -41,6 +42,18 @@ namespace WinFrm_ByteBarApp
 
         }
 
+        private void DisplayColumns()
+        {
+            // Set up ListView columns
+
+            listViewByteBar.View = View.Details;
+            listViewByteBar.Columns.Add(productName);
+            listViewByteBar.Columns.Add(columnQuantity);
+            listViewByteBar.Columns.Add(columnCost);
+            listViewByteBar.Columns.Add(columnReorderLevel);
+            listViewByteBar.Columns.Add(columnSalePrice);
+            listViewByteBar.Columns.Add(columnProductWeight);
+        }
         private static string GetConnectionString()
         {
             // University database connection
@@ -71,11 +84,27 @@ namespace WinFrm_ByteBarApp
                 //Test the functionality of the exception.
                 //throw new Exception();
 
+                //Edit the selection string based on number of items checked
+                string itemsChecked = "";
+                for (int x = 0; x < checkListBoxTables.CheckedItems.Count; x++)
+                {
+                    if (x < checkListBoxTables.CheckedItems.Count - 1)
+                    {
+                        itemsChecked = itemsChecked + checkListBoxTables.CheckedItems[x].ToString() + ", ";
+                        MessageBox.Show(itemsChecked);
+                    }
+                    else
+                    {
+                        itemsChecked = itemsChecked + checkListBoxTables.CheckedItems[x].ToString();
+                        MessageBox.Show(itemsChecked);
+                    }
+                }
+
                 OracleCommand cmd = new OracleCommand();
-                cmd.CommandText = "select * from Product";
-                OracleConnection conn = new OracleConnection(GetConnectionString());
-                conn.Open();
-                cmd.Connection = conn;
+                cmd.CommandText = "select * from " + itemsChecked;
+
+                cmd.Connection = OracleDB.ConnectToOracle();
+
                 OracleDataReader dr = cmd.ExecuteReader();
 
                 while (dr.Read())
@@ -105,6 +134,7 @@ namespace WinFrm_ByteBarApp
             catch (Exception ex)
             {
                 lblSystemMessage.Text = ex.Message.ToUpper();
+                lblSystemMessage.AutoSize = true;
             }
         }
 

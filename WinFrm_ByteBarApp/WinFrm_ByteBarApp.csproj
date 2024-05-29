@@ -184,6 +184,7 @@
     <Compile Include="MongoFrmByte.Designer.cs">
       <DependentUpon>MongoFrmByte.cs</DependentUpon>
     </Compile>
+    <Compile Include="OracleDB.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

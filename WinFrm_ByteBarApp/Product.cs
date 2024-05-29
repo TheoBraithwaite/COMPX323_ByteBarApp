@@ -7,8 +7,16 @@ using System.Threading.Tasks;
 
 namespace WinFrm_ByteBarApp
 {
-    internal class Product
+    public class Product
     {
+        //Set up ListView column names
+        public String productName = "Product name";
+        protected String columnQuantity = "Quantity";
+        protected String columnCost = "Cost";
+        protected String columnReorderLevel = "Reorder Level";
+        protected String columnSalePrice = "Sale price";
+        protected String columnProductWeight = "Sale price";
+
         public ObjectId Id { get; set; }
         public string Name { get; set; }
         public string Quantity { get; set; }
@@ -19,5 +27,6 @@ namespace WinFrm_ByteBarApp
 
         public int SalePrice { get; set; }
         public double Weight { get; set; }
+
     }
 }

@@ -37,7 +37,7 @@
             this.connectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mongoDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listViewByteBar = new System.Windows.Forms.ListView();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.checkListBoxTables = new System.Windows.Forms.CheckedListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblSystemMessage = new System.Windows.Forms.Label();
             this.menuStripByteBar.SuspendLayout();
@@ -121,17 +121,22 @@
             this.listViewByteBar.TabIndex = 5;
             this.listViewByteBar.UseCompatibleStateImageBehavior = false;
             // 
-            // checkedListBox1
+            // checkListBoxTables
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(35, 96);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(110, 109);
-            this.checkedListBox1.TabIndex = 7;
+            this.checkListBoxTables.FormattingEnabled = true;
+            this.checkListBoxTables.Items.AddRange(new object[] {
+            "Product",
+            "Beer",
+            "Orders",
+            "OrderRequests"});
+            this.checkListBoxTables.Location = new System.Drawing.Point(45, 93);
+            this.checkListBoxTables.Name = "checkListBoxTables";
+            this.checkListBoxTables.Size = new System.Drawing.Size(110, 64);
+            this.checkListBoxTables.TabIndex = 7;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(45, 299);
+            this.textBox1.Location = new System.Drawing.Point(45, 281);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 8;
@@ -152,7 +157,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblSystemMessage);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.checkListBoxTables);
             this.Controls.Add(this.listViewByteBar);
             this.Controls.Add(this.lblProducts);
             this.Controls.Add(this.btnDisplay);
@@ -180,7 +185,7 @@
         private System.Windows.Forms.ToolStripMenuItem connectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mongoDBToolStripMenuItem;
         private System.Windows.Forms.ListView listViewByteBar;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox checkListBoxTables;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblSystemMessage;
     }

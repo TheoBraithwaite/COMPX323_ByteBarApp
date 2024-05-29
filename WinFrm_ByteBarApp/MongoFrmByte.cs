@@ -26,15 +26,6 @@ namespace WinFrm_ByteBarApp
             InitializeComponent();
         }
 
-        //private static MongoClient ConnectToMongoDB()
-        //{
-        //    // University database connection
-
-        //    MongoClient dbClient = new MongoClient("mongodb://cl463:bnNfWisRnA@mongodb.cms.waikato.ac.nz:27017");
-
-        //    return dbClient;
-        //}
-
         private void ResizeListViewColumns(ListView lv)
         {
             foreach (ColumnHeader column in lv.Columns)
