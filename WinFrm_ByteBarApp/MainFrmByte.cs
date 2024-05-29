@@ -65,8 +65,12 @@ namespace WinFrm_ByteBarApp
             listViewByteBar.Columns.Add(columnReorderLevel);
             listViewByteBar.Columns.Add(columnSalePrice);
             listViewByteBar.Columns.Add(columnProductWeight);
+
             try
             {
+                //Test the functionality of the exception.
+                //throw new Exception();
+
                 OracleCommand cmd = new OracleCommand();
                 cmd.CommandText = "select * from Product";
                 OracleConnection conn = new OracleConnection(GetConnectionString());
@@ -100,7 +104,7 @@ namespace WinFrm_ByteBarApp
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                lblSystemMessage.Text = ex.Message.ToUpper();
             }
         }
 
@@ -108,6 +112,7 @@ namespace WinFrm_ByteBarApp
         {
             string message = "Are you sure you want to exit?";
             string caption = "Confirm exit";
+
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             MessageBoxIcon icon1 = MessageBoxIcon.Question;
 
@@ -122,13 +127,13 @@ namespace WinFrm_ByteBarApp
 
         private void mongoDBToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //hides this form currently on
+            //Hides the current Oracle table window.
             Hide();
-            //is the Add_Class page as a new object               
+            //Open a new Mongo table form as a new object            
             MongoFrmByte mongoDBWindow = new MongoFrmByte();
-            //Shows the add Class page window
+            //Shows the new Mongo table window
             mongoDBWindow.ShowDialog();
-            //closes the current open windows so its only the new one showing
+            //Close the current Oracle table window so only the new MongoDB window showing.
             this.Close();
         }
     }

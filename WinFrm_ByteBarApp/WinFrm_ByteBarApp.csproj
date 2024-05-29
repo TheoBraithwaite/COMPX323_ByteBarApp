@@ -177,10 +177,14 @@
     <Compile Include="MainFrmByte.Designer.cs">
       <DependentUpon>MainFrmByte.cs</DependentUpon>
     </Compile>
-    <Compile Include="MongoFrmByte.cs" />
+    <Compile Include="MongoDB.cs" />
+    <Compile Include="MongoFrmByte.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MongoFrmByte.Designer.cs">
       <DependentUpon>MongoFrmByte.cs</DependentUpon>
     </Compile>
+    <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainFrmByte.resx">

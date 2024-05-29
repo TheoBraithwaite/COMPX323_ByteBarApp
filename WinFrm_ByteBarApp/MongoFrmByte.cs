@@ -12,19 +12,6 @@ using MongoDB.Driver;
 
 namespace WinFrm_ByteBarApp
 {
-    public class Product
-    {
-        public ObjectId Id { get; set; }
-        public string Name { get; set; }
-        public string Quantity { get; set; }
-
-        public double Cost { get; set; }
-
-        public float ReorderLevel { get; set; }
-
-        public int SalePrice { get; set; }
-        public double Weight { get; set; }
-    }
     public partial class MongoFrmByte : Form
     {
         //Set up ListView column names
@@ -39,14 +26,14 @@ namespace WinFrm_ByteBarApp
             InitializeComponent();
         }
 
-        private static MongoClient ConnectToMongoDB()
-        {
-            // University database connection
+        //private static MongoClient ConnectToMongoDB()
+        //{
+        //    // University database connection
 
-            MongoClient dbClient = new MongoClient("mongodb://cl463:bnNfWisRnA@mongodb.cms.waikato.ac.nz:27017");
+        //    MongoClient dbClient = new MongoClient("mongodb://cl463:bnNfWisRnA@mongodb.cms.waikato.ac.nz:27017");
 
-            return dbClient;
-        }
+        //    return dbClient;
+        //}
 
         private void ResizeListViewColumns(ListView lv)
         {
@@ -57,13 +44,12 @@ namespace WinFrm_ByteBarApp
         }
 
         private async void btnDisplayMongo_Click(object sender, EventArgs e)
-        {
-            var client = ConnectToMongoDB();
-            var db = client.GetDatabase("cl463");
-            var collection = db.GetCollection<Product>("Product");
+        { 
 
             String product, quantity;
-            float cost, salePrice, weight;
+            float cost = 0;
+            float salePrice = 0;
+            float weight = 0;
             int reorderLevel = 0;
 
             // Set up ListView columns
@@ -75,11 +61,75 @@ namespace WinFrm_ByteBarApp
             listViewMongo.Columns.Add(columnSalePrice);
             listViewMongo.Columns.Add(columnProductWeight);
 
-            var results = await collection.FindAsync(_ => true);
-            foreach (var result in results.ToList())
+            
+            try
             {
-                Console.WriteLine(result.Name);
+                throw new Exception();
+                //Connect to Cameron's database
+                IMongoDatabase db = MongoDB.ConnectToMongoDB();
+
+                //Then connect to the "Product" collection
+                IMongoCollection<Product> collection = db.GetCollection<Product>("Product");
+
+                var results = await collection.FindAsync(_ => true);
+                foreach (var result in results.ToList())
+                {
+                    product = result.Name;
+                    quantity = result.Quantity;
+                    cost = float.Parse(result.Cost.ToString());
+                    salePrice = float.Parse(result.SalePrice.ToString());
+                    weight = float.Parse(result.Weight.ToString());
+                    reorderLevel = int.Parse(result.ReorderLevel.ToString());
+
+
+                    //Create an item to add sub-items to.
+                    ListViewItem mongoProductItem = new ListViewItem(product);
+                    mongoProductItem.SubItems.Add(quantity);
+                    mongoProductItem.SubItems.Add(cost.ToString());
+                    mongoProductItem.SubItems.Add(salePrice.ToString());
+                    mongoProductItem.SubItems.Add(weight.ToString());
+                    mongoProductItem.SubItems.Add(reorderLevel.ToString());
+
+                    listViewMongo.Items.Add(mongoProductItem);
+
+                    //Console.WriteLine(result.Name);
+                }
+                ResizeListViewColumns(listViewMongo);
             }
+            catch (Exception ex)
+            {
+                lblSystemMessage.Text = ex.Message.ToUpper();
+                lblSystemMessage.AutoSize = true;
+            }
+        }
+
+        private void mongoDBExit_Click(object sender, EventArgs e)
+        {
+            string message = "Are you sure you want to exit?";
+            string caption = "Confirm exit";
+
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            MessageBoxIcon icon1 = MessageBoxIcon.Question;
+
+            //Displays the MessageBox.
+            DialogResult quit = MessageBox.Show(message, caption, buttons, icon1);
+            if (quit == DialogResult.Yes)
+            {
+                // Closes the parent form.
+                Application.Exit();
+            }
+        }
+
+        private void menuMongoDBOracle_Click(object sender, EventArgs e)
+        {
+            //Hides the current MongoDB table window.
+            Hide();
+            //Open a new Oracle table form as a new object            
+            MongoFrmByte mongoDBWindow = new MongoFrmByte();
+            //Shows the new Oracle table window
+            mongoDBWindow.ShowDialog();
+            //Close the current MongoDB table window so only the new Oracle window showing.
+            this.Close();
         }
     }
 }

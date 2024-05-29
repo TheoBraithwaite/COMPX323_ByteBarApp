@@ -134,4 +134,4 @@ H:\theobraithwaite\2024\COMPX323-24A\ByteBar Backup\WinFrm_ByteBarApp\bin\Debug\
 H:\theobraithwaite\2024\COMPX323-24A\ByteBar Backup\WinFrm_ByteBarApp\bin\Debug\System.Security.AccessControl.xml
 H:\theobraithwaite\2024\COMPX323-24A\ByteBar Backup\WinFrm_ByteBarApp\bin\Debug\System.Security.Principal.Windows.xml
 H:\theobraithwaite\2024\COMPX323-24A\ByteBar Backup\WinFrm_ByteBarApp\bin\Debug\System.Text.Encoding.CodePages.xml
-H:\theobraithwaite\2024\COMPX323-24A\ByteBar Backup\WinFrm_ByteBarApp\obj\Debug\WinFrm_ByteBarApp.Product.resources
+H:\theobraithwaite\2024\COMPX323-24A\ByteBar Backup\WinFrm_ByteBarApp\obj\Debug\WinFrm_ByteBarApp.MongoFrmByte.resources

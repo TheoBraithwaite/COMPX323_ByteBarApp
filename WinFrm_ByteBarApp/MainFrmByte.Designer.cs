@@ -39,6 +39,7 @@
             this.listViewByteBar = new System.Windows.Forms.ListView();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblSystemMessage = new System.Windows.Forms.Label();
             this.menuStripByteBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,7 +108,7 @@
             // mongoDBToolStripMenuItem
             // 
             this.mongoDBToolStripMenuItem.Name = "mongoDBToolStripMenuItem";
-            this.mongoDBToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mongoDBToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.mongoDBToolStripMenuItem.Text = "MongoDB";
             this.mongoDBToolStripMenuItem.Click += new System.EventHandler(this.mongoDBToolStripMenuItem_Click);
             // 
@@ -135,11 +136,21 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 8;
             // 
+            // lblSystemMessage
+            // 
+            this.lblSystemMessage.Font = new System.Drawing.Font("Geometr415 Blk BT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSystemMessage.ForeColor = System.Drawing.Color.Red;
+            this.lblSystemMessage.Location = new System.Drawing.Point(22, 419);
+            this.lblSystemMessage.Name = "lblSystemMessage";
+            this.lblSystemMessage.Size = new System.Drawing.Size(100, 22);
+            this.lblSystemMessage.TabIndex = 14;
+            // 
             // MainFrmByte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblSystemMessage);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.listViewByteBar);
@@ -171,6 +182,7 @@
         private System.Windows.Forms.ListView listViewByteBar;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblSystemMessage;
     }
 }
 

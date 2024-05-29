@@ -41,6 +41,7 @@
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.lblProducts = new System.Windows.Forms.Label();
             this.btnDisplayMongo = new System.Windows.Forms.Button();
+            this.lblSystemMessage = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,8 +67,9 @@
             // mongoDBExit
             // 
             this.mongoDBExit.Name = "mongoDBExit";
-            this.mongoDBExit.Size = new System.Drawing.Size(93, 22);
+            this.mongoDBExit.Size = new System.Drawing.Size(180, 22);
             this.mongoDBExit.Text = "Exit";
+            this.mongoDBExit.Click += new System.EventHandler(this.mongoDBExit_Click);
             // 
             // connectToolStripMenuItem
             // 
@@ -80,8 +82,9 @@
             // menuMongoDBOracle
             // 
             this.menuMongoDBOracle.Name = "menuMongoDBOracle";
-            this.menuMongoDBOracle.Size = new System.Drawing.Size(108, 22);
+            this.menuMongoDBOracle.Size = new System.Drawing.Size(180, 22);
             this.menuMongoDBOracle.Text = "Oracle";
+            this.menuMongoDBOracle.Click += new System.EventHandler(this.menuMongoDBOracle_Click);
             // 
             // contextMenuStrip1
             // 
@@ -101,11 +104,11 @@
             // 
             this.LblByteBarMongo.AutoSize = true;
             this.LblByteBarMongo.Font = new System.Drawing.Font("Magneto", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblByteBarMongo.Location = new System.Drawing.Point(299, 31);
+            this.LblByteBarMongo.Location = new System.Drawing.Point(186, 31);
             this.LblByteBarMongo.Name = "LblByteBarMongo";
-            this.LblByteBarMongo.Size = new System.Drawing.Size(451, 58);
+            this.LblByteBarMongo.Size = new System.Drawing.Size(533, 58);
             this.LblByteBarMongo.TabIndex = 6;
-            this.LblByteBarMongo.Text = "Byte Bar Mongo";
+            this.LblByteBarMongo.Text = "Byte Bar MongoDB";
             // 
             // textBox1
             // 
@@ -117,7 +120,7 @@
             // checkedListBox1
             // 
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(29, 107);
+            this.checkedListBox1.Location = new System.Drawing.Point(35, 99);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(110, 109);
             this.checkedListBox1.TabIndex = 11;
@@ -140,11 +143,21 @@
             this.btnDisplayMongo.UseVisualStyleBackColor = true;
             this.btnDisplayMongo.Click += new System.EventHandler(this.btnDisplayMongo_Click);
             // 
+            // lblSystemMessage
+            // 
+            this.lblSystemMessage.Font = new System.Drawing.Font("Geometr415 Blk BT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSystemMessage.ForeColor = System.Drawing.Color.Red;
+            this.lblSystemMessage.Location = new System.Drawing.Point(25, 417);
+            this.lblSystemMessage.Name = "lblSystemMessage";
+            this.lblSystemMessage.Size = new System.Drawing.Size(100, 22);
+            this.lblSystemMessage.TabIndex = 13;
+            // 
             // MongoFrmByte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblSystemMessage);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.lblProducts);
@@ -176,5 +189,6 @@
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label lblProducts;
         private System.Windows.Forms.Button btnDisplayMongo;
+        private System.Windows.Forms.Label lblSystemMessage;
     }
 }
